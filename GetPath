@@ -1,0 +1,28 @@
+import bpy
+
+
+# Specify the exact file path for your 'defines.hpp' file
+#file_path = r"C:\Users\carra\Desktop\volo\FluidX3D\src\defines.hpp"
+
+file_path = r"C:\Users\carra\Desktop\BUIFluidX3D\pragmaonce.txt"
+
+ln = bui_fluidx3d['sna_line'] # This is actually referring to the 7th line due to 0-based indexing
+
+# Read the lines from the file
+with open(file_path, 'r') as file:
+    lines = file.readlines()
+
+# Note: Ensure that the file has enough lines to avoid IndexError
+if lines[ln].startswith('//'):
+    # Uncomment the line by removing the leading comment markers
+    lines[ln] = lines[ln][2:]
+else:
+    # Comment the line by adding '//' at the beginning if not already commented
+    lines[ln] = '//' + lines[ln]
+
+# Write all lines back to the file
+with open(file_path, 'w') as file:
+    file.writelines(lines)
+
+# Print the modified line for confirmation
+print(lines[ln])

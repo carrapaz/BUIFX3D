@@ -1,0 +1,53 @@
+file_path = bui_fluidx3d['sna_definespath']
+
+# Read the lines from the file
+with open(file_path, 'r') as file:
+    lines = file.readlines()
+
+if lines[4].startswith('//'):
+    bui_fluidx3d['sna_d2q9'] = False
+    
+else:
+    bui_fluidx3d['sna_d2q9'] = True 
+    
+if lines[5].startswith('//'):
+    bui_fluidx3d['sna_d3q15'] = False
+    
+else:
+    bui_fluidx3d['sna_d3q15'] = True
+    
+if lines[6].startswith('//'):
+    bui_fluidx3d['sna_d3q19'] = False
+    
+else:
+    bui_fluidx3d['sna_d3q19'] = True 
+
+if lines[7].startswith('//'):
+    bui_fluidx3d['sna_d3q27'] = False
+    
+else:
+    bui_fluidx3d['sna_d3q27'] = True 
+
+if lines[9].startswith('//'):
+    bui_fluidx3d['sna_srt'] = False
+    
+else:
+    bui_fluidx3d['sna_srt'] = True 
+
+if lines[10].startswith('//'):
+    bui_fluidx3d['sna_trt'] = False
+    
+else:
+    bui_fluidx3d['sna_trt'] = True 
+    
+if lines[12].startswith('//'):
+    bui_fluidx3d['sna_fp16s'] = False
+    
+else:
+    bui_fluidx3d['sna_fp16s'] = True 
+
+if lines[13].startswith('//'):
+    bui_fluidx3d['sna_fp16c'] = False
+    
+else:
+    bui_fluidx3d['sna_fp16c'] = True 
